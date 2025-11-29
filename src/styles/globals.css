@@ -1,0 +1,105 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+  font-family: 'Inter', -apple-system, sans-serif; 
+  line-height: 1.6; 
+  color: #333;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+.header { 
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white; padding: 1rem 0; 
+}
+.header .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: bold; text-decoration: none; color: white; }
+.nav { display: flex; gap: 2rem; }
+.nav-link { color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 25px; transition: all 0.3s; }
+.nav-link:hover, .nav-link.active { background: rgba(255,255,255,0.2); }
+
+.hero { 
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+              url('https://images.unsplash.com/photo-1571896349840-0a4a558a3419?w=1920');
+  background-size: cover; 
+  color: white; text-align: center; 
+  padding: 5rem 0; 
+}
+.hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+
+.monuments-grid, .tours-grid { 
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 2rem; margin: 3rem 0; 
+}
+
+.monument-card, .virtual-tour-card { 
+  background: white; border-radius: 15px; overflow: hidden; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s; 
+}
+.monument-card:hover { transform: translateY(-10px); }
+
+.card-image img, .tour-placeholder { 
+  height: 200px; width: 100%; object-fit: cover; 
+}
+.tour-placeholder { 
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4); 
+  display: flex; align-items: center; justify-content: center; 
+  color: white; font-weight: bold; 
+}
+
+.search-filters { 
+  display: flex; gap: 1rem; margin: 2rem 0; max-width: 500px; 
+}
+.search-filters input, .search-filters select { 
+  flex: 1; padding: 0.75rem; border: 2px solid #e1e5e9; 
+  border-radius: 10px; font-size: 1rem; 
+}
+
+.btn, .explore-btn, .start-tour-btn { 
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+  color: white; border: none; padding: 0.75rem 1.5rem; 
+  border-radius: 25px; cursor: pointer; font-weight: 500; 
+  transition: all 0.3s; text-decoration: none; display: inline-block; 
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+.stats-grid { 
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 1.5rem; margin: 2rem 0; 
+}
+.stat-card { 
+  background: white; padding: 2rem; border-radius: 15px; 
+  text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.1); 
+}
+.stat-card h3 { font-size: 2.5rem; color: #667eea; margin-bottom: 0.5rem; }
+
+.footer { 
+  background: #1a1a1a; color: white; text-align: center; 
+  padding: 2rem 0; margin-top: 4rem; 
+}
+.user-role {
+  color: #ffd700;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  background: rgba(255,215,0,0.1);
+  border-radius: 20px;
+  margin-right: 1rem;
+}
+
+.logout-btn, .login-link {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.loading-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  font-size: 1.2rem;
+}
