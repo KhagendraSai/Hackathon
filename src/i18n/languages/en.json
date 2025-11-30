@@ -1,0 +1,26 @@
+{
+  "header": {
+    "logo": "Indian Culture & Heritage",
+    "home": "Home",
+    "explore": "Explore",
+    "tours": "Virtual Tours",
+    "login": "Login",
+    "logout": "Logout",
+    "admin": "Admin"
+  },
+  "home": {
+    "title": "Discover India's Timeless Heritage",
+    "subtitle": "Explore ancient monuments, virtual tours, and rich cultural traditions"
+  },
+  "monuments": {
+    "featured": "Featured Monuments",
+    "tajMahal": "Taj Mahal",
+    "redFort": "Red Fort"
+  },
+  "login": {
+    "title": "Heritage Explorer",
+    "username": "Username",
+    "password": "Password",
+    "demo": "Demo Logins"
+  }
+}

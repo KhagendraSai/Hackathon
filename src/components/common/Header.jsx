@@ -1,7 +1,10 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';  
+import { useAuth } from '../../contexts/AuthContext';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Header = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
   const { user, logout } = useAuth();
@@ -12,17 +15,18 @@ const Header = () => {
   };
 
   const navItems = [
-    { path: '/', label: 'Home' },
-    { path: '/explore', label: 'Explore' },
-    { path: '/tours', label: 'Virtual Tours' }
+    { path: '/', label: t('header.home') },
+    { path: '/explore', label: t('header.explore') },
+    { path: '/tours', label: t('header.tours') }
   ];
 
   return (
     <header className="header">
       <div className="container">
         <Link to="/" className="logo">
-          🇮🇳 Indian Heritage Explorer
+          {t('header.logo')}
         </Link>
+
         <nav className="nav">
           {navItems.map((item) => (
             <Link
@@ -33,17 +37,31 @@ const Header = () => {
               {item.label}
             </Link>
           ))}
-          
+
+          {/* Admin link visible only for Admin role */}
+          {user && user.role === 'Admin' && (
+            <Link
+              to="/admin"
+              className={`nav-link ${location.pathname.startsWith('/admin') ? 'active' : ''}`}
+            >
+              {t('header.admin') || 'Admin'}
+            </Link>
+          )}
+
+          {/* Language switcher */}
+          <LanguageSwitcher />
+
+          {/* Auth buttons */}
           {user ? (
             <>
               <span className="user-role">{user.role}</span>
               <button onClick={handleLogout} className="logout-btn">
-                Logout
+                {t('header.logout')}
               </button>
             </>
           ) : (
             <Link to="/login" className="login-link">
-              Login
+              {t('header.login')}
             </Link>
           )}
         </nav>

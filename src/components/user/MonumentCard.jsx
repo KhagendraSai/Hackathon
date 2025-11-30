@@ -10,7 +10,12 @@ const MonumentCard = ({ monument }) => {
         <h3>{monument.name}</h3>
         <p className="location">{monument.location}</p>
         <p className="era">{monument.era}</p>
-        <Link to="/explore" className="explore-btn">
+
+        {/* Go to dedicated monument details page */}
+        <Link
+          to={`/monuments/${monument.id}`}
+          className="explore-btn"
+        >
           Explore →
         </Link>
       </div>
